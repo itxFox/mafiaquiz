@@ -10,6 +10,7 @@ let contatoreDomande = 0;
 let contaRisposte = 0;
 let nDomandeQuiz = 0;
 let punteggioQuiz = 0;
+let risposteDate = [];
 
 getQuiz();
 
@@ -55,6 +56,9 @@ function getQuiz() { //funzione per la popolazione dell'oggetto quizzes
 
 
 async function createQuestionBox(idQuiz) { //funzione per generare il quiz selezionato
+
+    contatoreDomande = 0;
+    contaRisposte = 0; 
 
     let questionsDiv = document.getElementById("questions");
     questionsDiv.innerHTML = ""; //svuota il div della scheda quiz
@@ -128,8 +132,7 @@ async function createQuestionBox(idQuiz) { //funzione per generare il quiz selez
 
 
 function getDomande(idQuiz) { //funzione per popolare l'oggetto domande
-    console.log("hai scelto il quiz con id: " + idQuiz);
-
+    
     return new Promise((resolve, reject) => {
         fetch(endpoint + '/domande').then(response => response.json()).then(data => {
             const promises = data.map(domanda => {
@@ -182,7 +185,7 @@ function getRisposte(idDomanda) {  //funzione per popolare l'oggetto risposte
 
 let riepilogoBox;
 function score() {
-    let risposteDate = [];
+    risposteDate = [];
 
     for (let i = 1; i < nDomandeQuiz + 1; i++) {
         var risposteInput = document.getElementsByName('risposta' + i);
@@ -219,7 +222,6 @@ function score() {
             riepilogoBox.appendChild(rispostaSbagliata);
         }
     });
-    //
 
     // Aggiorna il punteggio del quiz
     punteggioQuiz = punteggioOttenuto;
