@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    border: 0;
+    padding:0;
+}
+
+.card {
+    border: 2px solid black;
+    padding: 10px;
+    box-shadow: 5px 5px 5px grey;
+    text-align: center;
+    height: 150px;
+    font-size: 28px;
+    width: 350px;
+}
+
+/*.quizSection {
+    margin-right: auto;
+    margin-left: 30px;
+    width: 1000px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 30px;
+}*/
+
+p {
+    margin: 0%
+}
+
+.container {
+    margin: 30px auto;
+    background: white;
+    padding: 20px 15px
+}
+
+label.box {
+    display: flex;
+    margin-top: 10px;
+    padding: 10px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ddd
+}
+
+
+label.box:hover {
+    background: #d5bbf7
+}
+
+label.box .course {
+    display: flex;
+    align-items: center;
+    width: 100%
+}
+
+label.box .circle {
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #ddd;
+    display: inline-block
+}
+
+.btn.btn-primary {
+    border-radius: 25px;
+    margin-top: 20px
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; /* Altezza del footer */
+}
+
