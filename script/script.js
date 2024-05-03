@@ -56,6 +56,7 @@ function getQuiz() { //funzione per la popolazione dell'oggetto quizzes
 
 
 async function createQuestionBox(idQuiz) { //funzione per generare il quiz selezionato
+    
 
     contatoreDomande = 0;
     contaRisposte = 0; 
@@ -64,7 +65,22 @@ async function createQuestionBox(idQuiz) { //funzione per generare il quiz selez
     questionsDiv.innerHTML = ""; //svuota il div della scheda quiz
 
     try {
+        let attendiDiv = document.createElement('div');
+        let attendi= document.createElement('h2');
+        attendi.innerText="Attendi";
+        let imgLoading = document.createElement('img');
+        imgLoading.src="img/loading.gif";
+        
+        imgLoading.className="w-25";
+        console.log(imgLoading)
+        attendiDiv.appendChild(attendi);
+        attendiDiv.appendChild(imgLoading);
+
+        document.getElementById('questions').appendChild(attendiDiv);
+        
+
         await getDomande(idQuiz); //attendo che venga eseguita la funzione getDomande()
+        document.getElementById('questions').removeChild(attendiDiv);
 
         Object.values(domande).forEach(domanda => { // Creazione delle domande
 
