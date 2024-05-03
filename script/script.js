@@ -15,7 +15,7 @@ let risposteDate = [];
 getQuiz();
 
 function getQuiz() { //funzione per la popolazione dell'oggetto quizzes
-    console.log('%cBUONGIORNO PROFESSOR FOLLI 😎\nSAPEVO SAREBBE ENTRATO QUI', 'font-weight: bold; color: lightgreen; font-size: 19px;');
+    console.log('%cBUONGIORNO A TUTTI 😎', 'font-weight: bold; color: lightgreen; font-size: 19px;');
 
     fetch(endpoint + '/quizzes').then(response => response.json()).then(data => {
 
